@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todos | Organize Your Tasks</title>
+    <meta
+      name="description"
+      content="Stay organized and boost your productivity with the Todos. Create and manage your task list efficiently."
+    />
+    <meta
+      name="keywords"
+      content="to-do list, task management, productivity app, task organizer, task tracker"
+    />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/scss/main.scss" />
+  </head>
+
+  <body>
+    <div class="container">
+      <article class="todo-app">
+        <header class="todo-app__header header">
+          <h1 class="header__title">todos</h1>
+          <div class="header__flex">
+            <input id="toggle-all" type="checkbox" class="header__toggle-all" />
+            <input
+              type="text"
+              class="header__add-task add-task"
+              placeholder="Add a task..."
+              autofocus
+            />
+          </div>
+        </header>
+        <section class="todo-app__task-list task-list">
+          <ul class="task-list__items"></ul>
+        </section>
+        <footer class="todo-app__footer footer">
+          <div class="footer__flex">
+            <span id="counter" class="footer__count"></span>
+            <ul class="footer__filters filters">
+              <li class="filters__item">
+                <a
+                  id="filter-all"
+                  href="#/"
+                  class="filters__link filters__link_selected"
+                  >All</a
+                >
+              </li>
+              <li class="filters__item">
+                <a id="filter-active" href="#/active" class="filters__link"
+                  >Active</a
+                >
+              </li>
+              <li class="filters__item">
+                <a
+                  id="filter-completed"
+                  href="#/completed"
+                  class="filters__link"
+                  >Completed</a
+                >
+              </li>
+            </ul>
+            <button class="footer__btn-clear">Clear comleted</button>
+          </div>
+        </footer>
+      </article>
+    </div>
+    <script type="module" src="src/js/index.js"></script>
+  </body>
+</html>

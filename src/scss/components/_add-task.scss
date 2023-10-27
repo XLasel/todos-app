@@ -1,0 +1,14 @@
+.add-task {
+    padding: $space-x4;
+    border: none;
+
+    background: $input-color-primary;
+    border-radius: $radius-l;
+
+    color: inherit;
+
+    &:focus {
+        outline: 1px solid $border-color-accent;
+        outline-offset: 0;
+    }
+}

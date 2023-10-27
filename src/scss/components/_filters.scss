@@ -1,0 +1,26 @@
+.filters {
+
+    &__link {
+        padding: $space-x1 $space-x2;
+
+        border: 1px solid transparent;
+        border-radius: $radius-xs;
+
+        text-decoration: none;
+        color: $text-color-secondary;
+
+        transition: all 0.3s ease;
+
+        @include hover {
+            &:hover {
+                border-color: $border-color-secondary;
+            }
+        }
+
+        &_selected {
+            border-color: $border-color-primary;
+
+            color: $text-color-primary;
+        }
+    }
+}

@@ -1,0 +1,71 @@
+//Media
+
+$desktopScreenSize: 1280;
+$tabletScreenSize: 1000;
+$mobileScreenSize: 550;
+
+//Primatives
+
+$black-main: rgba(8, 8, 28, 1);
+$black-600: rgba(8, 8, 28, 0.90);
+$black-500: rgba(8, 8, 28, 0.64);
+$black-400: rgba(8, 8, 28, 0.36);
+$black-300: rgba(8, 8, 28, 0.12);
+
+$white-main: rgba(255, 255, 255, 1);
+$white-600: rgba(255, 255, 255, 0.88);
+
+$blue-400: rgba(69, 77, 231, 0.4);
+$blue-300: rgba(69, 77, 231, 0.14);
+$blue-200: rgba(69, 77, 231, 0.09);
+
+$green-300: rgba(1, 177, 92, 0.14);
+$green-200: rgba(1, 177, 92, 0.09);
+
+$orange-400: rgba(255, 139, 0, 0.4);
+
+$px-4: 0.4rem;
+$px-8: 0.8rem;
+$px-12: 1.2rem;
+$px-16: 1.6rem;
+$px-20: 2.0rem;
+$px-24: 2.4rem;
+$px-32: 3.2rem;
+
+//Tokens
+
+$text-color-primary: $black-main;
+$text-color-primary-inverse: $white-main;
+$text-color-secondary: $black-500;
+$text-color-tertiary: $black-600;
+
+$icon-color-primary: $black-300;
+
+$input-color-primary: $white-main;
+
+$list-color-primary: $blue-200;
+$list-color-primary-hover: $blue-300;
+$list-color-secondary: $green-200;
+$list-color-secondary-hover: $green-300;
+
+$border-color-primary: $black-main;
+$border-color-secondary: $black-500;
+$border-color-accent: $blue-400;
+
+$btn-color-primary: $black-main;
+$btn-color-primary-hover: $black-600;
+
+$bg-color-primary: $white-main;
+
+$space-x1: $px-4;
+$space-x2: $px-8;
+$space-x3: $px-12;
+$space-x4: $px-16;
+$space-x5: $px-20;
+$space-x6: $px-24;
+$space-x8: $px-32;
+
+$radius-xs: $px-8;
+$radius-s: $px-12;
+$radius-m: $px-16;
+$radius-l: $px-32;

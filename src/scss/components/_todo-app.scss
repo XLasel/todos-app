@@ -1,0 +1,41 @@
+.todo-app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: $space-x6;
+
+    margin: 22.2rem 0 10rem 0;
+    padding: $space-x8 $space-x6;
+
+    background: linear-gradient(238deg, rgba(8, 9, 28, 0.04) 8.42%, rgba(255, 255, 255, 0.01) 46.96%, rgba(69, 77, 231, 0.02) 86.47%),
+        linear-gradient(137deg, rgba(10, 12, 56, 0.06) 5.5%, rgba(8, 9, 28, 0.01) 45.46%, rgba(11, 13, 52, 0.06) 94.36%);
+
+    border-radius: $radius-l;
+
+    & input::-webkit-input-placeholder {
+        font-style: italic;
+        color: $text-color-secondary;
+    }
+
+    & input::-moz-placeholder {
+        font-style: italic;
+        color: $text-color-secondary;
+    }
+
+    & input::placeholder {
+        font-style: italic;
+        color: $text-color-secondary;
+    }
+
+    &__header {
+        position: relative;
+    }
+
+    &__task-list {
+        position: relative;
+    }
+
+    &__footer {
+        position: relative;
+    }
+}

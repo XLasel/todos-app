@@ -1,0 +1,81 @@
+:root {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+
+    margin: 0
+}
+
+html {
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+
+    font-size: 62.5%;
+
+    @include tablet {
+        margin: 0;
+    }
+
+    @include mobile {
+        font-size: 50%;
+    }
+}
+
+
+button {
+    -webkit-appearance: none;
+    appearance: none;
+
+    padding: 0;
+    border: 0;
+
+    background: none;
+
+    vertical-align: baseline;
+    color: inherit;
+}
+
+:focus {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid $border-color-accent;
+    outline-offset: 3px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+body {
+    @extend %p-normal;
+
+    $bg-elipse-size-s: clamp(200px, 28vw, 600px);
+    $bg-elipse-size-l: clamp(400px, 42vw, 900px);
+
+    background: url('/svg/bg-ellipse-green.svg') no-repeat, url('/svg/bg-ellipse-orange.svg') no-repeat, $bg-color-primary;
+    background-position: left 15vw top 20px,
+        right 10vw top 50px;
+    background-size: $bg-elipse-size-s $bg-elipse-size-s,
+        $bg-elipse-size-l $bg-elipse-size-l;
+
+    color: $text-color-primary;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    line-height: inherit;
+}
+
+h1 {
+    @include font(normal 600 9.6rem / 111% "Poppins", -1.44px);
+    text-transform: lowercase;
+}
