@@ -1,4 +1,4 @@
-import todoRepository from "../entities/ToDoRepository";
+import todoRepository from "../entities/todoRepository";
 import { counter } from "../entities/dom";
 
 function updateCounter() {

@@ -1,5 +1,5 @@
 import { toggleAll, sectionList, footer } from '../entities/dom.js';
-import todoRepository from '../entities/ToDoRepository.js';
+import todoRepository from '../entities/todoRepository.js';
 
 function updateSectionVisibility() {
     if (todoRepository.tasks.length === 0) {

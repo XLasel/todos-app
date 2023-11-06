@@ -1,4 +1,4 @@
-import todoRepository from "../entities/ToDoRepository";
+import todoRepository from "../entities/todoRepository";
 import { toggleAll } from "../entities/dom";
 
 function updateStatusToggleAll() {

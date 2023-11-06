@@ -1,5 +1,5 @@
 import { toggleAll } from "../entities/dom";
-import todoRepository from "../entities/ToDoRepository";
+import todoRepository from "../entities/todoRepository";
 import updateCounter from "../features/updateCounter";
 import localStorageHandler from "../features/localStorageHandler";
 

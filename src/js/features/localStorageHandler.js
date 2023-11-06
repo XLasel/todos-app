@@ -1,4 +1,4 @@
-import todoRepository from "../entities/ToDoRepository";
+import todoRepository from "../entities/todoRepository";
 
 const localStorageHandler = {
 	saveTasks() {

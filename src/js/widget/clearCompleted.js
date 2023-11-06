@@ -1,4 +1,4 @@
-import todoRepository from "../entities/ToDoRepository";
+import todoRepository from "../entities/todoRepository";
 import localStorageHandler from "../features/localStorageHandler";
 import updateSectionVisibility from "../features/updateSectionVisibility";
 import updateStatusToggleAll from "../features/updateStatusToggleAll"
