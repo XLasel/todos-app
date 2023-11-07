@@ -88,8 +88,10 @@
         cursor: pointer;
         transition: all 0.3s ease;
 
-        &:active {
-            background-image: url('/svg/radiobox-active.svg');
+        @include hover {
+            &:active {
+                background-image: url('/svg/radiobox-active.svg');
+            }
         }
 
         &:checked {
