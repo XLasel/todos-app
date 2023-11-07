@@ -9,7 +9,6 @@ import updateCounter from '../features/updateCounter.js';
 import applyFilterFromUrl from '../features/applyFilterFromUrl.js'
 import showByFilter from '../features/showByFilter.js';
 
-
 import clearCompleted from '../widget/clearCompleted.js';
 import handleToggleAll from '../widget/handleToggleAll.js';
 import { addTaskDom, doneTaskDom, deleteTaskDom, editTaskDom } from '../widget/taskServese.js';
