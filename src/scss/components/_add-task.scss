@@ -6,9 +6,11 @@
     border-radius: $radius-l;
 
     color: inherit;
-
-    &:focus {
+    
+    @include hover {
+      &:focus {
         outline: 1px solid $border-color-accent;
         outline-offset: 0;
-    }
+      }
+    }   
 }
