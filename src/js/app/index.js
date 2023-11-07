@@ -17,10 +17,10 @@ import { addTaskDom, doneTaskDom, deleteTaskDom, editTaskDom } from '../widget/t
 localStorageHandler.getTasks();
 if (todoRepository.tasks.length > 0) {
 	todoRepository.tasks.forEach((task) => renderTask(task));
-	updateSectionVisibility();
 	updateStatusToggleAll();
 	updateCounter();
 }
+updateSectionVisibility();
 
 if (window.matchMedia('(pointer: coarse)').matches) {
 	let lastTouchEnd = 0;
