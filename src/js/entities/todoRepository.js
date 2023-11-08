@@ -8,7 +8,7 @@ let todoRepository = {
       done: false,
     };
     this.tasks.push(newTask);
-    return newTask
+    return newTask;
   },
 
   doneTask(id) {
@@ -23,7 +23,7 @@ let todoRepository = {
 
   getTask(id) {
     return this.tasks.find((task) => task.id === id) || null;
-  }
-}
+  },
+};
 
 export default todoRepository;

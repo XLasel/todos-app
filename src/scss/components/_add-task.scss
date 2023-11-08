@@ -1,16 +1,16 @@
 .add-task {
-    padding: $space-x4;
-    border: none;
+  padding: $space-x4;
+  border: none;
 
-    background: $input-color-primary;
-    border-radius: $radius-l;
+  background: $input-color-primary;
+  border-radius: $radius-l;
 
-    color: inherit;
-    
-    @include hover {
-      &:focus {
-        outline: 1px solid $border-color-accent;
-        outline-offset: 0;
-      }
-    }   
+  color: inherit;
+
+  @include hover {
+    &:focus {
+      outline: 1px solid $border-color-accent;
+      outline-offset: 0;
+    }
+  }
 }

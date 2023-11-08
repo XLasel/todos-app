@@ -1,63 +1,63 @@
 .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    position: absolute;
+    top: -1.65em;
+
+    margin: 0;
+
+    cursor: default;
+
+    text-transform: lowercase;
+    color: $text-color-tertiary;
+  }
+
+  &__flex {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    gap: $space-x4;
 
-    &__title {
-        position: absolute;
-        top: -1.65em;
+    width: 100%;
+  }
 
-        margin: 0;
+  &__toggle-all {
+    appearance: none;
 
-        cursor: default;
+    flex-grow: 0;
+    flex-shrink: 0;
 
-        text-transform: lowercase;
-        color: $text-color-tertiary;
+    width: 24px;
+    height: 48px;
+    margin-left: calc(1.6rem + 1px);
+    border: none;
+
+    background-image: url("/svg/toggle-normal.svg");
+    background-repeat: no-repeat;
+
+    cursor: pointer;
+
+    line-height: 0px;
+
+    transition: all 0.3s ease;
+
+    @include hover {
+      &:active {
+        background-image: url("/svg/toggle-active.svg");
+      }
     }
 
-    &__flex {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: $space-x4;
-
-        width: 100%;
+    &:checked {
+      background-image: url("/svg/toggle-checked.svg");
     }
+  }
 
-    &__toggle-all {
-        appearance: none;
+  &__add-task {
+    flex: 1 1 auto;
 
-        flex-grow: 0;
-        flex-shrink: 0;
-
-        width: 24px;
-        height: 48px;
-        margin-left: calc(1.6rem + 1px);
-        border: none;
-
-        background-image: url('/svg/toggle-normal.svg');
-        background-repeat: no-repeat;
-
-        cursor: pointer;
-
-        line-height: 0px;
-
-        transition: all 0.3s ease;
-
-        @include hover {
-            &:active {
-                background-image: url('/svg/toggle-active.svg');
-            }
-        }
-
-        &:checked {
-            background-image: url('/svg/toggle-checked.svg');
-        }
-    }
-
-    &__add-task {
-        flex: 1 1 auto;
-
-        width: 100%;
-    }
+    width: 100%;
+  }
 }

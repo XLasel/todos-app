@@ -1,8 +1,10 @@
-import { tasksList } from '../entities/dom.js'
+import { tasksList } from "../entities/dom.js";
 
 function renderTask(task) {
-  const cssClass = task.done ? 'task-list__task task task_completed' : 'task-list__task task';
-  const checked = task.done ? 'checked' : '';
+  const cssClass = task.done
+    ? "task-list__task task task_completed"
+    : "task-list__task task";
+  const checked = task.done ? "checked" : "";
 
   const taskHTML = `
   <li id="${task.id}" class="${cssClass}">
@@ -13,7 +15,7 @@ function renderTask(task) {
     </div>
   </li>
 		`;
-  tasksList.insertAdjacentHTML('afterbegin', taskHTML);
-};
+  tasksList.insertAdjacentHTML("afterbegin", taskHTML);
+}
 
-export default renderTask
+export default renderTask;
