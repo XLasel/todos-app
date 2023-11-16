@@ -1,29 +1,23 @@
 import {
+  todoRepository,
   taskInput,
   toggleAll,
   tasksList,
   footer,
   filterLinks,
   btnClear,
-} from "../entities/dom.js";
-import todoRepository from "../entities/todoRepository.js";
+} from "../entities";
 
-import localStorageHandler from "../features/localStorageHandler.js";
-import renderTask from "../features/renderTask.js";
-import updateSectionVisibility from "../features/updateSectionVisibility.js";
-import updateStatusToggleAll from "../features/updateStatusToggleAll.js";
-import updateCounter from "../features/updateCounter.js";
-import applyFilterFromUrl from "../features/applyFilterFromUrl.js";
-import showByFilter from "../features/showByFilter.js";
+import { applyFilterFromUrl, localStorageHandler, renderTask, showByFilter, updateSectionVisibility, updateStatusToggleAll, updateCounter } from "../features";
 
-import clearCompleted from "../widget/clearCompleted.js";
-import handleToggleAll from "../widget/handleToggleAll.js";
 import {
+  clearCompleted,
+  handleToggleAll,
   addTaskDom,
   doneTaskDom,
   deleteTaskDom,
   editTaskDom,
-} from "../widget/taskServese.js";
+} from "../widget";
 
 localStorageHandler.getTasks();
 if (todoRepository.tasks.length > 0) {

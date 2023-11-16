@@ -1,6 +1,6 @@
-import todoRepository from "../entities/todoRepository.js";
+import { todoRepository } from "../entities";
 
-const localStorageHandler = {
+export const localStorageHandler = {
   saveTasks() {
     localStorage.setItem("tasks", JSON.stringify(todoRepository.tasks));
   },
@@ -11,5 +11,3 @@ const localStorageHandler = {
     }
   },
 };
-
-export default localStorageHandler;

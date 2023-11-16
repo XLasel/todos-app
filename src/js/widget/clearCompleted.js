@@ -1,12 +1,10 @@
-import todoRepository from "../entities/todoRepository";
-import localStorageHandler from "../features/localStorageHandler";
-import updateSectionVisibility from "../features/updateSectionVisibility";
-import updateStatusToggleAll from "../features/updateStatusToggleAll";
+import { todoRepository } from "../entities";
+import { localStorageHandler, updateSectionVisibility, updateStatusToggleAll } from "../features";
 
-function clearCompleted() {
+export function clearCompleted() {
   const doneTasks = todoRepository.tasks.filter((task) => task.done);
   doneTasks.forEach((task) => {
-    const id = task.id;
+    const { id } = task;
     document.getElementById(id).remove();
     todoRepository.deleteTask(id);
   });
@@ -14,6 +12,4 @@ function clearCompleted() {
   localStorageHandler.saveTasks();
   updateSectionVisibility();
   updateStatusToggleAll();
-}
-
-export default clearCompleted;
+};

@@ -1,4 +1,4 @@
-let todoRepository = {
+export let todoRepository = {
   tasks: [],
 
   addTask(taskText) {
@@ -17,13 +17,10 @@ let todoRepository = {
   },
 
   deleteTask(id) {
-    const index = this.tasks.findIndex((task) => task.id === id);
-    this.tasks.splice(index, 1);
+    this.tasks = this.tasks.filter((task) => task.id !== id);
   },
 
   getTask(id) {
     return this.tasks.find((task) => task.id === id) || null;
   },
 };
-
-export default todoRepository;

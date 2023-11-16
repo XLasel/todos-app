@@ -1,29 +1,23 @@
-import { tasksList, filterLinks } from "../entities/dom.js";
+import { tasksList, filterLinks } from "../entities";
 
-function showByFilter(event) {
+export function showByFilter(event) {
   if (event.target.classList.contains("filters__link_selected")) return;
 
   filterLinks.forEach((item) => {
-    if (item === event.target) {
-      item.classList.add("filters__link_selected");
-    } else if (item.classList.contains("filters__link_selected")) {
-      item.classList.remove("filters__link_selected");
-    }
+    item.classList.toggle("filters__link_selected", item === event.target);
   });
 
-  if (event.target.id === "filter-all") {
-    tasksList.className = "task-list__items";
+  switch (event.target.id) {
+    case "filter-all":
+      tasksList.className = "task-list__items";
+      break;
+    case "filter-active":
+      tasksList.classList.remove("task-list__items_completed");
+      tasksList.classList.add("task-list__items_active");
+      break;
+    case "filter-completed":
+      tasksList.classList.remove("task-list__items_active");
+      tasksList.classList.add("task-list__items_completed");
+      break;
   }
-
-  if (event.target.id === "filter-active") {
-    tasksList.classList.remove("task-list__items_completed");
-    tasksList.classList.add("task-list__items_active");
-  }
-
-  if (event.target.id === "filter-completed") {
-    tasksList.classList.remove("task-list__items_active");
-    tasksList.classList.add("task-list__items_completed");
-  }
-}
-
-export default showByFilter;
+};

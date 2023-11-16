@@ -1,10 +1,5 @@
-import { taskInput } from "../entities/dom.js";
-import todoRepository from "../entities/todoRepository.js";
-import localStorageHandler from "../features/localStorageHandler.js";
-import renderTask from "../features/renderTask.js";
-import updateSectionVisibility from "../features/updateSectionVisibility.js";
-import updateStatusToggleAll from "../features/updateStatusToggleAll.js";
-import updateCounter from "../features/updateCounter.js";
+import { todoRepository, taskInput } from "../entities";
+import { localStorageHandler, renderTask, updateCounter, updateSectionVisibility, updateStatusToggleAll } from "../features";
 
 export function addTaskDom() {
   const taskText = taskInput.value.trim();
