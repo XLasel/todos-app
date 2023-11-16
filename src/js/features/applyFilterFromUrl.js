@@ -5,4 +5,4 @@ export function applyFilterFromUrl() {
   if (link) {
     link.click();
   }
-};
+}

@@ -20,4 +20,4 @@ export function showByFilter(event) {
       tasksList.classList.add("task-list__items_completed");
       break;
   }
-};
+}

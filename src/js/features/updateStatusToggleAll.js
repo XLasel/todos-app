@@ -7,4 +7,4 @@ export function updateStatusToggleAll() {
   todoRepository.tasks.every((task) =>
     task.done ? (toggleAll.checked = true) : (toggleAll.checked = false),
   );
-};
+}

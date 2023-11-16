@@ -1,5 +1,11 @@
 import { todoRepository, taskInput } from "../entities";
-import { localStorageHandler, renderTask, updateCounter, updateSectionVisibility, updateStatusToggleAll } from "../features";
+import {
+  localStorageHandler,
+  renderTask,
+  updateCounter,
+  updateSectionVisibility,
+  updateStatusToggleAll,
+} from "../features";
 
 export function addTaskDom() {
   const taskText = taskInput.value.trim();
@@ -31,13 +37,13 @@ export function doneTaskDom(event) {
 }
 
 export function deleteTaskDom(event) {
-  const parenNode = event.target.closest(".task");
-  const id = Number(parenNode.id);
+  const parentNode = event.target.closest(".task");
+  const id = Number(parentNode.id);
 
   todoRepository.deleteTask(id);
   localStorageHandler.saveTasks();
 
-  parenNode.remove();
+  parentNode.remove();
 
   updateSectionVisibility();
   updateStatusToggleAll();
@@ -51,7 +57,7 @@ export function editTaskDom(event) {
   const parentNode = event.target.closest(".task");
   const id = Number(parentNode.id);
 
-  let taskHeight = taskItem.offsetHeight;
+  let { offsetHeight } = taskItem;
   const editTaskHTML = `<textarea class="task__edit">`;
 
   parentNode.classList.add("task_editing");
@@ -60,7 +66,7 @@ export function editTaskDom(event) {
   const editTaskInput = parentNode.querySelector(".task__edit");
   editTaskInput.value = taskItem.textContent;
   editTaskInput.focus();
-  editTaskInput.style.height = taskHeight + "px";
+  editTaskInput.style.height = offsetHeight + "px";
 
   function inputHandler() {
     editTaskInput.style.height = editTaskInput.scrollHeight + "px";

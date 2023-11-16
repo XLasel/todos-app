@@ -11,4 +11,4 @@ export function updateSectionVisibility() {
     sectionList.classList.remove("hidden");
     toggleAll.classList.remove("hidden");
   }
-};
+}

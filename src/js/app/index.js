@@ -8,7 +8,15 @@ import {
   btnClear,
 } from "../entities";
 
-import { applyFilterFromUrl, localStorageHandler, renderTask, showByFilter, updateSectionVisibility, updateStatusToggleAll, updateCounter } from "../features";
+import {
+  applyFilterFromUrl,
+  localStorageHandler,
+  renderTask,
+  showByFilter,
+  updateSectionVisibility,
+  updateStatusToggleAll,
+  updateCounter,
+} from "../features";
 
 import {
   clearCompleted,

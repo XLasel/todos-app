@@ -7,4 +7,4 @@ export function updateCounter() {
   );
   const textCase = count === 0 || count === 1 ? "item" : "items";
   counter.textContent = `${count} ${textCase} left`;
-};
+}

@@ -15,4 +15,4 @@ export function renderTask(task) {
   </li>
 		`;
   tasksList.insertAdjacentHTML("afterbegin", taskHTML);
-};
+}

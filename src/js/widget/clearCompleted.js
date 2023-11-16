@@ -1,5 +1,9 @@
 import { todoRepository } from "../entities";
-import { localStorageHandler, updateSectionVisibility, updateStatusToggleAll } from "../features";
+import {
+  localStorageHandler,
+  updateSectionVisibility,
+  updateStatusToggleAll,
+} from "../features";
 
 export function clearCompleted() {
   const doneTasks = todoRepository.tasks.filter((task) => task.done);
@@ -12,4 +16,4 @@ export function clearCompleted() {
   localStorageHandler.saveTasks();
   updateSectionVisibility();
   updateStatusToggleAll();
-};
+}

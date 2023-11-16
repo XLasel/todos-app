@@ -13,4 +13,4 @@ export function handleToggleAll() {
 
   localStorageHandler.saveTasks();
   updateCounter();
-};
+}
