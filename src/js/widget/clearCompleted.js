@@ -5,7 +5,7 @@ import {
   updateStatusToggleAll,
 } from "../features";
 
-export function clearCompleted() {
+export const clearCompleted = () => {
   const doneTasks = todoRepository.tasks.filter((task) => task.done);
   doneTasks.forEach((task) => {
     const { id } = task;
@@ -16,4 +16,4 @@ export function clearCompleted() {
   localStorageHandler.saveTasks();
   updateSectionVisibility();
   updateStatusToggleAll();
-}
+};

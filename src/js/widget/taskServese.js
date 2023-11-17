@@ -2,12 +2,11 @@ import { todoRepository, taskInput } from "../entities";
 import {
   localStorageHandler,
   renderTask,
-  updateCounter,
   updateSectionVisibility,
-  updateStatusToggleAll,
 } from "../features";
+import { updateUI } from "../utils";
 
-export function addTaskDom() {
+export const addTaskDom = () => {
   const taskText = taskInput.value.trim();
   if (taskText !== "") {
     const newTask = todoRepository.addTask(taskText);
@@ -18,12 +17,11 @@ export function addTaskDom() {
     taskInput.focus();
 
     updateSectionVisibility();
-    updateStatusToggleAll();
-    updateCounter();
+    updateUI();
   }
-}
+};
 
-export function doneTaskDom(event) {
+export const doneTaskDom = (event) => {
   const parentNode = event.target.closest(".task");
   const id = Number(parentNode.id);
 
@@ -32,11 +30,10 @@ export function doneTaskDom(event) {
 
   parentNode.classList.toggle("task_completed");
 
-  updateStatusToggleAll();
-  updateCounter();
-}
+  updateUI();
+};
 
-export function deleteTaskDom(event) {
+export const deleteTaskDom = (event) => {
   const parentNode = event.target.closest(".task");
   const id = Number(parentNode.id);
 
@@ -46,11 +43,10 @@ export function deleteTaskDom(event) {
   parentNode.remove();
 
   updateSectionVisibility();
-  updateStatusToggleAll();
-  updateCounter();
-}
+  updateUI();
+};
 
-export function editTaskDom(event) {
+export const editTaskDom = (event) => {
   if (event.target.className !== "task__label") return;
 
   const taskItem = event.target;
@@ -68,11 +64,11 @@ export function editTaskDom(event) {
   editTaskInput.focus();
   editTaskInput.style.height = offsetHeight + "px";
 
-  function inputHandler() {
+  const inputHandler = () => {
     editTaskInput.style.height = editTaskInput.scrollHeight + "px";
-  }
+  };
 
-  function saveEdit() {
+  const saveEdit = () => {
     const task = todoRepository.getTask(id);
     const editedText = editTaskInput.value.trim();
 
@@ -83,8 +79,7 @@ export function editTaskDom(event) {
       parentNode.remove();
 
       updateSectionVisibility();
-      updateStatusToggleAll();
-      updateCounter();
+      updateUI();
     } else {
       task.text = editedText;
       localStorageHandler.saveTasks();
@@ -98,9 +93,9 @@ export function editTaskDom(event) {
     editTaskInput.removeEventListener("input", inputHandler);
     document.removeEventListener("keydown", keydownHandler);
     document.removeEventListener("click", clickHandler);
-  }
+  };
 
-  function resetEdit() {
+  const resetEdit = () => {
     editTaskInput.remove();
     parentNode.classList.remove("task_editing");
 
@@ -109,23 +104,23 @@ export function editTaskDom(event) {
     editTaskInput.removeEventListener("input", inputHandler);
     document.removeEventListener("keydown", keydownHandler);
     document.removeEventListener("click", clickHandler);
-  }
+  };
 
-  function keydownHandler(event) {
+  const keydownHandler = (event) => {
     if (event.key === "Enter") {
       saveEdit();
     } else if (event.key === "Escape") {
       resetEdit();
     }
-  }
+  };
 
-  function clickHandler(event) {
+  const clickHandler = (event) => {
     if (!event.target.closest(".task_editing")) {
       saveEdit();
     }
-  }
+  };
 
   editTaskInput.addEventListener("input", inputHandler);
   document.addEventListener("keydown", keydownHandler);
   document.addEventListener("click", clickHandler);
-}
+};

@@ -1,6 +1,6 @@
 import { tasksList } from "../entities";
 
-export function renderTask(task) {
+export const renderTask = (task) => {
   const cssClass = task.done
     ? "task-list__task task task_completed"
     : "task-list__task task";
@@ -15,4 +15,4 @@ export function renderTask(task) {
   </li>
 		`;
   tasksList.insertAdjacentHTML("afterbegin", taskHTML);
-}
+};

@@ -1,10 +1,10 @@
 import { todoRepository, toggleAll } from "../entities";
 import { localStorageHandler, updateCounter } from "../features";
 
-export function handleToggleAll() {
+export const handleToggleAll = () => {
   const isChecked = toggleAll.checked;
 
-  todoRepository.tasks.forEach(function (task) {
+  todoRepository.tasks.forEach((task) => {
     task.done = isChecked;
     const taskElement = document.getElementById(task.id);
     taskElement.classList.toggle("task_completed", isChecked);
@@ -13,4 +13,4 @@ export function handleToggleAll() {
 
   localStorageHandler.saveTasks();
   updateCounter();
-}
+};

@@ -1,6 +1,6 @@
 import { todoRepository, toggleAll, sectionList, footer } from "../entities";
 
-export function updateSectionVisibility() {
+export const updateSectionVisibility = () => {
   if (todoRepository.tasks.length === 0) {
     footer.classList.add("hidden");
     sectionList.classList.add("hidden");
@@ -11,4 +11,4 @@ export function updateSectionVisibility() {
     sectionList.classList.remove("hidden");
     toggleAll.classList.remove("hidden");
   }
-}
+};

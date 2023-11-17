@@ -14,9 +14,9 @@ import {
   renderTask,
   showByFilter,
   updateSectionVisibility,
-  updateStatusToggleAll,
-  updateCounter,
 } from "../features";
+
+import { updateUI } from "../utils";
 
 import {
   clearCompleted,
@@ -30,15 +30,14 @@ import {
 localStorageHandler.getTasks();
 if (todoRepository.tasks.length > 0) {
   todoRepository.tasks.forEach((task) => renderTask(task));
-  updateStatusToggleAll();
-  updateCounter();
+  updateUI();
 }
 updateSectionVisibility();
 
 if (window.matchMedia("(pointer: coarse)").matches) {
   let lastTouchEnd = 0;
 
-  tasksList.addEventListener("touchend", function (event) {
+  tasksList.addEventListener("touchend", (event) => {
     const now = new Date().getTime();
     if (now - lastTouchEnd <= 300) {
       editTaskDom(event);

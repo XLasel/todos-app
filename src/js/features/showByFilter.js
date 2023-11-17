@@ -1,6 +1,6 @@
 import { tasksList, filterLinks } from "../entities";
 
-export function showByFilter(event) {
+export const showByFilter = (event) => {
   if (event.target.classList.contains("filters__link_selected")) return;
 
   filterLinks.forEach((item) => {
@@ -20,4 +20,4 @@ export function showByFilter(event) {
       tasksList.classList.add("task-list__items_completed");
       break;
   }
-}
+};
